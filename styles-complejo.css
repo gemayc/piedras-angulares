@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;/* para que no salga bordes*/
+}
+
+
+body {
+    /* background-color: rgba(3, 97, 97, 0.882); */
+    background-color: #f4d7db;
+}
+
+
+header {
+    /* background-color: rgba(255, 255, 255, 0.499);
+    background-color: #813047; */
+    background-color:#813047;/*#993750;*/
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 15px rgba 0, 0, 0, 0.5;   /*sombra*/
+
+}
+
+.title {
+    margin: 2rem;
+    color: rgba(252, 243, 246, 0.975);
+    text-align: center;
+    font-size: 60px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+h2 {
+    text-align: center;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin: 3rem;
+}
+
+  .profile-pic,.profile-secondary {
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+    justify-content: center; 
+    margin-bottom: 10px;
+    object-fit: cover; 
+} 
+
+.card {
+    background-color: rgba(113, 118, 124, 0.293);
+    padding: 10px;
+    border: 1px #ccc;
+    border-radius: 10px;
+    text-align: center;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 300px;
+    max-width: 400px;
+    position: relative;
+    perspective: 1000px;
+    height: 500px; 
+    
+    /*card es la principal para la rotacion hay q poner todo esto:  position: relative;
+    perspective: 1000px;
+    height: 400px; 
+
+    /* flex-grow: 1
+👉 “Puedo crecer si hay espacio extra”.
+Cuanto más alto el número, más crezco comparado con mis hermanas.
+
+🧘 flex-shrink: 1
+👉 “Puedo encogerme si no hay suficiente espacio”.
+Un 0 aquí diría: “¡Yo no me achico por nada del mundo!”
+
+📏 flex-basis: 300px
+👉 “Mi tamaño base es 300px. Es el tamaño que me gusta tener antes de que me pidan crecer o encogerme”.*/
+
+}
+.card-inner {
+width: 100%;
+height: 100%;
+transition: transform 1.5s; /*lo que tarda en dar la rotacion la tarjeta*/
+transform-style: preserve-3d;
+position: relative;
+}/* esta es sobre la que gira */
+
+
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;/*significa que no se transparente una con la otra*/
+    border-radius: 10px;
+}
+/* esta es la frontal y la trasera las dos tienen q tener estos valres*/
+
+.card-back {
+    transform: rotateY(180deg); /* aparte la primera hay q ponerle la rotacion*/
+}
+ .card:hover .card-inner {/*:not(:has(.button:hover)) { /* a partir de : not todo lo demas signifca  Cuando pases el ratón sobre la tarjeta, solo gira si NO estás pasando el ratón por el botón. si el boton ver mas esta delante” */
+    transform: rotateY(180deg);
+} 
+/* esto significa que cuando pasas el raton por las cartas por eso es card inner por todas se den la vuelta*/
+
+
+
+.card-container {
+    background-color:#f9eaeb;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 3rem;
+    justify-content: center;
+    border-radius: 20px;
+
+}
+
+h3 {
+    color: #fdfdfd;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    text-spacing-trim: 2px;
+    padding: 20px;
+
+}
+
+h4 {
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #f4eaea;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    padding:20px ;
+}
+
+p {
+    font-size: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+    text-shadow: 1px 1px 3px black;
+}
+
+footer {
+    /* background-color: rgba(255, 255, 255, 0.548); */
+    background-color: #813047;
+    padding: 3rem;
+    text-align: center;
+    font-size: 5px;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+    
+}
+
+@media (max-width:600px) {
+    h2 {
+        font-size: 18px;
+    }
+    .title {
+        font-size: 35px;
+    }
+    h3 {
+        font-size: 18px ;
+    }
+    h4 {
+        font-size: 18px;
+    }
+}
+  
+.card-inventions{
+    /* background-color:rgba(243, 12, 54, 0.293) ; */
+    background-color: #eab7bd;
+    border: 1px #ccc;
+    border-radius: 10px;
+    text-align: center; 
+    height: 100%;
+    padding: 10px;
+    overflow: hidden; /* corta todo lo q se salga del contenedor*/
+
+  } 
+
+   .card-people{
+    /* background-color:rgba(243, 12, 54, 0.293) ; */
+    background-color: #eab7bd;
+    height: 100%; 
+    padding: 10px;
+    border: 1px #ccc; 
+    border-radius: 10px;
+    text-align: center; 
+    overflow: hidden; 
+    /* display: flex;
+    flex-direction: column; 
+    justify-content: space-between; 
+    box-sizing: border-box; 
+      flex-grow: 1;
+      padding: 10px; */
+
+    
+ } 
+
+  .card p {
+    max-width: 100%;
+    text-align: left;
+    overflow-wrap: break-word;/* corta las palabras largas para que no se salgan*/
+    padding: 2px;
+
+ } /* este apartado lo he echo para que la letra se alinee a la izquierda y solo hay que 
+ nombrar la clase de bloque card con lo que quieres dentro de esa clase y te lo hace*/
+
+ .button {
+    display: inline-block;/* Hace que el botón:Se comporte como texto (va en línea con otros elementos),
+     pero puedas darle ancho, alto, padding, etc.
+     Sin esto, los enlaces <a> no aceptarían bien el padding. */
+   padding: 10px 15px; /*Añade espacio interno dentro del boton 10 px arriba y abajo 15 px izquierda y derecha*/
+   background-color: #813047;/* Añade color al boton*/
+   color: white;/*Cambia el color del texto del botón a blanco.Si no lo pones, el texto se verá azul (como los enlaces normales).*/
+   text-decoration: none;/*Quita el subrayado típico de los enlaces (<a>).*/
+   border-radius: 5px; /* Redondea las esquinas*/
+   font-weight: bold;/* pone negrita las letras*/
+   text-align: center;
+    margin: 10px; 
+ }
+ 
